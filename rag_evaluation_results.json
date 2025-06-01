@@ -1,0 +1,131 @@
+{
+  "test_cases": [
+    {
+      "question": "How much capital did Drylab raise in their investment round?",
+      "ground_truth": "Drylab raised 2.13 MNOK to match the 2.05 MNOK loan from Innovation Norway, with a total of 5 MNOK new capital including the development agreement with Filmlance International.",
+      "answer": "Drylab raised 2.13 MNOK in their investment round, and also received a 2.05 MNOK loan from Innovation Norway, as well as a development agreement with Filmlance International, making the total new capital 5 MNOK.",
+      "metrics": {
+        "faithfulness": 0.95,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.85,
+        "context_recall": 1.0,
+        "answer_correctness": 1.0
+      }
+    },
+    {
+      "question": "What is the return customer rate for Drylab?",
+      "ground_truth": "The return customer rate is 80%.",
+      "answer": "The return customer rate for Drylab is 80%, which proves value and willingness to pay.",
+      "metrics": {
+        "faithfulness": 0.9,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.78,
+        "context_recall": 1.0,
+        "answer_correctness": 0.95
+      }
+    },
+    {
+      "question": "Who joined Drylab as a mentor?",
+      "ground_truth": "Caitlin Burns joined as a mentor, along with Oscar-winning VFX supervisor Dave Stump who joined earlier.",
+      "answer": "Caitlin Burns joined Drylab as a mentor. She is an accomplished producer based in New York and an active member of the Producers Guild of America. Additionally, Oscar-winning VFX supervisor Dave Stump joined them earlier as a mentor.",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.82,
+        "context_recall": 0.9,
+        "answer_correctness": 0.95
+      }
+    },
+    {
+      "question": "Where will the launch of Drylab 3.0 take place?",
+      "ground_truth": "The launch of Drylab 3.0 will take place at the International Broadcasters Convention in Amsterdam in September.",
+      "answer": "The launch of Drylab 3.0 will take place at the International Broadcasters Convention in Amsterdam in September.",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.9,
+        "context_recall": 1.0,
+        "answer_correctness": 1.0
+      }
+    },
+    {
+      "question": "What is the revenue for the first four months compared to 2016?",
+      "ground_truth": "Revenue for the first four months is 200 kNOK, compared to 339 kNOK for all of 2016.",
+      "answer": "The revenue for the first four months is 200 kNOK, compared to 339 kNOK for all of 2016.",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.88,
+        "context_recall": 1.0,
+        "answer_correctness": 1.0
+      }
+    },
+    {
+      "question": "Which cities did Pontus and Audun visit in the US?",
+      "ground_truth": "Pontus and Audun visited New York, St. Louis, San Francisco, and Los Angeles.",
+      "answer": "Pontus and Audun visited New York, St. Louis, San Francisco, and Los Angeles during their tour of the US in February and March.",
+      "metrics": {
+        "faithfulness": 0.95,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.75,
+        "context_recall": 0.95,
+        "answer_correctness": 0.95
+      }
+    },
+    {
+      "question": "Who are some of the new owners that joined the Drylab family?",
+      "ground_truth": "New owners include Unni Jacobsen, Torstein Jahr, Suzanne Bolstad, Eivind Bergene, Turid Brun, Vigdis Trondsen, Lea Blindheim, Kristine Holmsen, Torstein Hansen, and Jostein Aanensen.",
+      "answer": "Some of the new owners that joined the Drylab family include Unni Jacobsen, Torstein Jahr, Suzanne Bolstad, Eivind Bergene, Turid Brun, Vigdis Trondsen, Lea Blindheim, Kristine Holmsen, Torstein Hansen, and Jostein Aanensen.",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.7,
+        "context_recall": 0.9,
+        "answer_correctness": 0.9
+      }
+    },
+    {
+      "question": "What happened at NAB and who did they meet?",
+      "ground_truth": "Andreas and Audun traveled to NAB in Las Vegas where they met with PIX System (a competitor), DITs at the DIT-WIT party, Pomfort, Apple, ARRI, Teradek/Paralinx, Amazon, Google, and IBM.",
+      "answer": "At NAB (National Association of Broadcasters convention) in Las Vegas, Andreas and Audun met with PIX System (one of their most important competitors), attended a DIT-WIT party with leading DITs, and had meetings with Pomfort, Apple, ARRI, Teradek/Paralinx, Amazon, Google, and IBM about various collaborations and technologies.",
+      "metrics": {
+        "faithfulness": 0.9,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.85,
+        "context_recall": 0.85,
+        "answer_correctness": 0.85
+      }
+    },
+    {
+      "question": "Why did Drylab decide not to attend Cine Gear?",
+      "ground_truth": "Drylab decided not to attend Cine Gear in L.A. because feedback from users about the show was mixed and their planned beta version of 3.0 was slightly delayed.",
+      "answer": "Drylab decided not to attend the Cine Gear expo in L.A. this year because feedback from many users about the show was mixed, and their planned beta version of 3.0 was slightly delayed.",
+      "metrics": {
+        "faithfulness": 0.95,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.8,
+        "context_recall": 0.9,
+        "answer_correctness": 0.95
+      }
+    },
+    {
+      "question": "When will the Annual General Meeting be held?",
+      "ground_truth": "Drylab's AGM will be held on June 16th at 15:00.",
+      "answer": "The Annual General Meeting (AGM) for Drylab will be held on June 16th at 15:00.",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.95,
+        "context_recall": 1.0,
+        "answer_correctness": 1.0
+      }
+    }
+  ],
+  "averages": {
+    "faithfulness": 0.965,
+    "answer_relevancy": 1.0,
+    "context_precision": 0.828,
+    "context_recall": 0.95,
+    "answer_correctness": 0.955
+  }
+}
