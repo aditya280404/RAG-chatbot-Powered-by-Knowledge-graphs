@@ -18,15 +18,14 @@ from bs4 import BeautifulSoup
 import re
 from langchain_groq import ChatGroq
 
-# Load secure secrets from .streamlit/secrets.toml
+# ✅ Load secrets from Streamlit Cloud
 NEO4J_URI = st.secrets["neo4j"]["uri"]
 NEO4J_USERNAME = st.secrets["neo4j"]["username"]
 NEO4J_PASSWORD = st.secrets["neo4j"]["password"]
 NEO4J_DATABASE = st.secrets["neo4j"]["database"]
-
 groq_api_key = st.secrets["groq"]["api_key"]
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
 LANGCHAIN_API_KEY = st.secrets["langchain"]["api_key"]
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
 
 @st.cache_resource
 def get_embedding_model():
@@ -231,11 +230,16 @@ def main():
                 st.write("### Detected Entities")
                 st.write(", ".join(cypher_data["entities"]))
                 query_tabs = st.tabs(["LLM Custom Query", "Basic Query", "Property Query", "Relationship Query", "Path Query"])
-                st.code(cypher_data["custom_query"], language="cypher")
-                st.code(cypher_data["basic_query"], language="cypher")
-                st.code(cypher_data["property_query"], language="cypher")
-                st.code(cypher_data["relationship_query"], language="cypher")
-                st.code(cypher_data["path_query"], language="cypher")
+                with query_tabs[0]:
+                    st.code(cypher_data["custom_query"], language="cypher")
+                with query_tabs[1]:
+                    st.code(cypher_data["basic_query"], language="cypher")
+                with query_tabs[2]:
+                    st.code(cypher_data["property_query"], language="cypher")
+                with query_tabs[3]:
+                    st.code(cypher_data["relationship_query"], language="cypher")
+                with query_tabs[4]:
+                    st.code(cypher_data["path_query"], language="cypher")
         elif user_query:
             st.warning("Please process a document first")
 
