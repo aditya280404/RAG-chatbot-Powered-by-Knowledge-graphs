@@ -21,15 +21,14 @@ import re
 
 
 load_dotenv()
+NEO4J_URI = st.secrets["neo4j"]["uri"]
+NEO4J_USERNAME = st.secrets["neo4j"]["username"]
+NEO4J_PASSWORD = st.secrets["neo4j"]["password"]
+NEO4J_DATABASE = st.secrets["neo4j"]["database"]
 
-NEO4J_URI = os.getenv("NEO4J_URI")
-NEO4J_USERNAME = os.getenv("NEO4J_USERNAME")
-NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
-NEO4J_DATABASE = os.getenv("NEO4J_DATABASE")
-
-groq_api_key = os.getenv("groq_api_key")
+groq_api_key = st.secrets["groq"]["api_key"]
+LANGCHAIN_API_KEY = st.secrets["langchain"]["api_key"]
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
 
 
 from langchain_groq import ChatGroq
