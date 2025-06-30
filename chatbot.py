@@ -21,14 +21,16 @@ import re
 
 
 load_dotenv()
-NEO4J_URI = st.secrets["neo4j"]["uri"]
-NEO4J_USERNAME = st.secrets["neo4j"]["username"]
-NEO4J_PASSWORD = st.secrets["neo4j"]["password"]
-NEO4J_DATABASE = st.secrets["neo4j"]["database"]
 
-groq_api_key = st.secrets["groq"]["api_key"]
-LANGCHAIN_API_KEY = st.secrets["langchain"]["api_key"]
+NEO4J_URI = os.getenv("NEO4J_URI")
+NEO4J_USERNAME = os.getenv("NEO4J_USERNAME")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
+NEO4J_DATABASE = os.getenv("NEO4J_DATABASE")
+
+# Fix: Use consistent environment variable name
+groq_api_key = os.getenv("GROQ_API_KEY") or os.getenv("groq_api_key")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
+LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
 
 
 from langchain_groq import ChatGroq
@@ -53,8 +55,11 @@ class JinaEmbeddings(Embeddings):
         return self.embed_documents([text])[0]
 
 
-@st.cache_resource
+# Fix: Remove caching and add error handling for LLM initialization
 def initialize_llm():
+    if not groq_api_key:
+        st.error("GROQ_API_KEY not found in environment variables")
+        return None
     return ChatGroq(groq_api_key=groq_api_key, model_name="llama-3.3-70b-versatile")
 
 
@@ -290,6 +295,7 @@ def main():
         st.session_state.retriever = None
     if "qa_chain" not in st.session_state:
         st.session_state.qa_chain = None
+    # Fix: Initialize LLM properly without caching
     if "llm" not in st.session_state:
         st.session_state.llm = initialize_llm()
     if "document_text" not in st.session_state:
@@ -299,6 +305,10 @@ def main():
     if "source_type" not in st.session_state:
         st.session_state.source_type = None
 
+    # Fix: Check if LLM initialization failed
+    if st.session_state.llm is None:
+        st.error("Failed to initialize LLM. Please check your GROQ_API_KEY environment variable.")
+        st.stop()
 
     source_type = st.radio("Select source type", ["PDF Document", "Web URL"])
     
@@ -429,4 +439,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
