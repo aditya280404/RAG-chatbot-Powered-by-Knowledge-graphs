@@ -35,3 +35,6 @@ PyPDF2
 
 # Performance optimization
 tqdm>=4.66.1
+
+
+tiktoken
