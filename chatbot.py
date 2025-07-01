@@ -28,7 +28,7 @@ NEO4J_PASSWORD = st.secrets["neo4j"]["password"]
 NEO4J_DATABASE = st.secrets["neo4j"]["database"]
 groq_api_key = st.secrets["groq"]["api_key"]
 LANGCHAIN_API_KEY = st.secrets["langchain"]["api_key"]
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
+# os.environ["LANGCHAIN_TRACING_V2"] = "true"
 
 
 
