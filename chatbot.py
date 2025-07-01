@@ -12,7 +12,7 @@ from langchain.vectorstores.base import VectorStoreRetriever
 from langchain.embeddings.base import Embeddings
 from PyPDF2 import PdfReader
 from langchain_text_splitters import TokenTextSplitter
-from langchain_community.graphs import Neo4jGraph
+from langchain_neo4j import Neo4jGraph
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
